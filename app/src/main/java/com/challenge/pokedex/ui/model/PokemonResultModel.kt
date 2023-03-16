@@ -14,7 +14,7 @@ class PokemonResultModel(
                 id = pokemonResult.id,
                 name = pokemonResult.name.replaceFirstChar { it.uppercase() },
                 thumbnailUrl = pokemonResult.thumbnailUrl,
-                thumbnailLocalPath = pokemonResult.thumbnailPath
+                thumbnailLocalPath = pokemonResult.thumbnailLocalPath
             )
         }
     }

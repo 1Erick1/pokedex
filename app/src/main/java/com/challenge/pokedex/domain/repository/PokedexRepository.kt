@@ -9,4 +9,6 @@ interface PokedexRepository {
     suspend fun searchPokemonByName(query: String): List<PokemonResult>
 
     suspend fun getPokemonDetail(id: String): PokemonDetail
+
+    suspend fun downloadThumbnails(list: List<PokemonResult>)
 }

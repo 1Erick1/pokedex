@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 open class BaseViewModel: ViewModel() {
-    private val _progress = MutableLiveData<Boolean>()
+    protected val _progress = MutableLiveData<Boolean>()
     val progress: LiveData<Boolean> = _progress
 
     private val _error = MutableLiveData<Throwable>()
@@ -21,6 +21,7 @@ open class BaseViewModel: ViewModel() {
                 func()
                 _progress.postValue(false)
             } catch (e: Exception){
+                e.printStackTrace()
                 _progress.postValue(false)
                 _error.postValue(e)
             }
