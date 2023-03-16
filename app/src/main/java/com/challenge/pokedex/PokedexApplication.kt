@@ -4,6 +4,7 @@ import android.app.Application
 import com.challenge.pokedex.di.dataModule
 import com.challenge.pokedex.di.interactorModule
 import com.challenge.pokedex.di.networkModule
+import com.challenge.pokedex.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -17,7 +18,7 @@ class PokedexApplication: Application() {
     private fun initKoin() {
         startKoin {
             androidContext(applicationContext)
-            modules(listOf(networkModule, dataModule, interactorModule))
+            modules(listOf(networkModule, dataModule, interactorModule, viewModelModule))
         }
     }
 }
