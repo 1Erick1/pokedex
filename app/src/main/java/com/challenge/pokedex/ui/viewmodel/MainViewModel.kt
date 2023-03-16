@@ -1,5 +1,6 @@
 package com.challenge.pokedex.ui.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.challenge.pokedex.domain.interactor.DownloadThumbnailsInteractor
@@ -32,7 +33,9 @@ class MainViewModel(
 
     fun searchByName(query: String){
         execute {
+            Log.d("XXX","Searching $query")
             val results = searchPokemonByNameInteractor.execute(query)
+            Log.d("XXX","Results $results")
             if (results.isEmpty()){
                 _empty.postValue(true)
             } else {

@@ -11,7 +11,7 @@ interface PokemonDao {
     @Query("SELECT * FROM pokemon")
     suspend fun fetchAllPokemons(): List<PokemonDto>
 
-    @Query("SELECT * FROM pokemon WHERE name LIKE '%' || :query || '%'")
+    @Query("SELECT * FROM pokemon WHERE name LIKE :query || '%'")
     suspend fun searchPokemonByName(query: String): List<PokemonDto>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

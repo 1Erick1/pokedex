@@ -1,5 +1,6 @@
 package com.challenge.pokedex.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -29,10 +30,11 @@ class PokemonAdapter(private val onClick: (PokemonResultModel) -> Unit): Recycle
         holder.bindView(list[position])
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setItems(items: List<PokemonResultModel>){
         list.clear()
         list.addAll(items)
-        notifyItemRangeChanged(0,items.size)
+        notifyDataSetChanged()
     }
 
     inner class ViewHolder(private val binding: ItemPokemonBinding): RecyclerView.ViewHolder(binding.root){

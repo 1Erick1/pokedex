@@ -25,7 +25,7 @@ class PokedexRepositoryImpl(
     }
 
     override suspend fun searchPokemonByName(query: String): List<PokemonResult> {
-        TODO("Not yet implemented")
+        return pokemonLocalDataSource.searchPokemonByName(query.lowercase())
     }
 
     override suspend fun getPokemonDetail(id: String): PokemonDetail {

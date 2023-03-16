@@ -14,10 +14,6 @@ class PokedexNetworkDataSourceImpl(
         }
     }
 
-    override suspend fun searchPokemonByName(query: String): List<PokemonResult> {
-        TODO("Not yet implemented")
-    }
-
     override suspend fun getPokemonDetail(id: String): PokemonDetail {
         TODO("Not yet implemented")
     }

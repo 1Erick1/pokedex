@@ -7,7 +7,5 @@ interface PokedexNetworkDatasource {
 
     suspend fun fetchAllPokemon(): List<PokemonResult>
 
-    suspend fun searchPokemonByName(query: String): List<PokemonResult>
-
     suspend fun getPokemonDetail(id: String): PokemonDetail
 }
