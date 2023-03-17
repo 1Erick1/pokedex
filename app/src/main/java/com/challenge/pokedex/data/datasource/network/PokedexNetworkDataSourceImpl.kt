@@ -20,7 +20,9 @@ class PokedexNetworkDataSourceImpl(
     }
 
     override suspend fun getPokemonEvolutions(id: String): List<Evolution> {
-        return listOf()
+        val species = pokedexService.getPokemonSpecies(id)
+        return pokedexService.getEvolutionChain(species.evolutionChain.url)
+            .toDomainEntity()
     }
 
 }

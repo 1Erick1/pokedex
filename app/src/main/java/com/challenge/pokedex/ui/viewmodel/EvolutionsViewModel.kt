@@ -15,9 +15,9 @@ class EvolutionsViewModel(
     private val _noEvolutions = MutableLiveData<Boolean>()
     val noEvolutions : LiveData<Boolean> = _noEvolutions
 
-    fun getEvolutions(name: String){
+    fun getEvolutions(id: String){
         execute {
-            val list = getPokemonEvolutionsInteractor.execute(name)
+            val list = getPokemonEvolutionsInteractor.execute(id)
             if (list.size<=1){
                 _noEvolutions.postValue(true)
             }else{

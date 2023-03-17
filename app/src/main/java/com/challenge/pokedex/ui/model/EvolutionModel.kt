@@ -1,6 +1,7 @@
 package com.challenge.pokedex.ui.model
 
 import com.challenge.pokedex.domain.entity.Evolution
+import com.challenge.pokedex.ui.extensions.capitalizeFirst
 
 class EvolutionModel(
     val name: String,
@@ -9,7 +10,7 @@ class EvolutionModel(
     companion object{
         fun fromEntity(evolution: Evolution): EvolutionModel{
             return EvolutionModel(
-                name = evolution.name.uppercase(),
+                name = evolution.name.capitalizeFirst(),
                 imageUrl = evolution.imageUrl
             )
         }

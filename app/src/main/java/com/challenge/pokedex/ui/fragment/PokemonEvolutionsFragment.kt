@@ -29,6 +29,9 @@ class PokemonEvolutionsFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupView()
         setupViewModel()
+        arguments?.getString(ExtraKeys.EXTRA_POKEMON_ID)?.let {
+            viewModel.getEvolutions(it)
+        }
     }
 
     private fun setupViewModel() {
