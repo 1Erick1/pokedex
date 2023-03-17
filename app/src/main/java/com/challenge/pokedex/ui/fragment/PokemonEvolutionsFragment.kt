@@ -41,7 +41,7 @@ class PokemonEvolutionsFragment: Fragment() {
         viewModel.progress.observe(viewLifecycleOwner){
             binding.progress.visibility = if (it) View.VISIBLE else View.GONE
         }
-        viewModel.noEvolutions.observe(viewLifecycleOwner){
+        viewModel.empty.observe(viewLifecycleOwner){
             binding.tvNoEvolutions.visibility = if (it) View.VISIBLE else View.GONE
         }
     }

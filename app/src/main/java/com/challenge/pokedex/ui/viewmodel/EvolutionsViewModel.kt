@@ -12,14 +12,14 @@ class EvolutionsViewModel(
     private val _evolutions = MutableLiveData<List<EvolutionModel>>()
     val evolutions: LiveData<List<EvolutionModel>> = _evolutions
 
-    private val _noEvolutions = MutableLiveData<Boolean>()
-    val noEvolutions : LiveData<Boolean> = _noEvolutions
+    private val _empty = MutableLiveData<Boolean>()
+    val empty : LiveData<Boolean> = _empty
 
     fun getEvolutions(id: String){
         execute {
             val list = getPokemonEvolutionsInteractor.execute(id)
             if (list.size<=1){
-                _noEvolutions.postValue(true)
+                _empty.postValue(true)
             }else{
                 _evolutions.postValue(list.map { EvolutionModel.fromEntity(it) })
             }
