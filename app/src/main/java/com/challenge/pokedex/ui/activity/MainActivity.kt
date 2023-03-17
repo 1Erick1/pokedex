@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToDetail(pokemon: PokemonResultModel){
-
+        PokemonDetailActivity.start(this, pokemon.id, pokemon.name)
     }
 
     companion object{

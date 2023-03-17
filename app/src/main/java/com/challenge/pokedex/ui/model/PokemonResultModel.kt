@@ -1,6 +1,7 @@
 package com.challenge.pokedex.ui.model
 
 import com.challenge.pokedex.domain.entity.PokemonResult
+import com.challenge.pokedex.ui.extensions.capitalizeFirst
 
 class PokemonResultModel(
     val id: String,
@@ -12,7 +13,7 @@ class PokemonResultModel(
         fun fromDomainEntity(pokemonResult: PokemonResult): PokemonResultModel{
             return PokemonResultModel(
                 id = pokemonResult.id,
-                name = pokemonResult.name.replaceFirstChar { it.uppercase() },
+                name = pokemonResult.name.capitalizeFirst(),
                 thumbnailUrl = pokemonResult.thumbnailUrl,
                 thumbnailLocalPath = pokemonResult.thumbnailLocalPath
             )

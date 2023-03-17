@@ -1,5 +1,6 @@
 package com.challenge.pokedex.data.datasource.network.service
 
+import com.challenge.pokedex.data.datasource.network.response.PokemonDetailResponse
 import com.challenge.pokedex.data.datasource.network.response.PokemonListResponse
 import com.challenge.pokedex.data.datasource.network.response.PokemonResultResponse
 import retrofit2.http.GET
@@ -14,6 +15,6 @@ interface PokedexService {
     ): PokemonListResponse
 
     @GET("pokemon/{id}")
-    suspend fun getPokemonDetail(@Path("id") id: String): PokemonResultResponse
+    suspend fun getPokemonDetail(@Path("id") id: String): PokemonDetailResponse
 
 }

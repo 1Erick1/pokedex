@@ -3,4 +3,12 @@
     <string name="no_results_msg">No results found</string>
     <string name="generic_error_msg">An error occurred, please try again</string>
     <string name="search">Search</string>
+    <string name="types">Type</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="moves">Moves</string>
+    <string name="abilities">Abilities</string>
+    <string name="no_evolutions">No evolutions</string>
+    <string name="info">Info</string>
+    <string name="evolutions">Evolutions</string>
 </resources>

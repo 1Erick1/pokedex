@@ -1,6 +1,7 @@
 package com.challenge.pokedex.data.datasource.network
 
 import com.challenge.pokedex.data.datasource.network.service.PokedexService
+import com.challenge.pokedex.domain.entity.Evolution
 import com.challenge.pokedex.domain.entity.PokemonDetail
 import com.challenge.pokedex.domain.entity.PokemonResult
 
@@ -15,7 +16,11 @@ class PokedexNetworkDataSourceImpl(
     }
 
     override suspend fun getPokemonDetail(id: String): PokemonDetail {
-        TODO("Not yet implemented")
+        return pokedexService.getPokemonDetail(id).toDomainEntity()
+    }
+
+    override suspend fun getPokemonEvolutions(id: String): List<Evolution> {
+        return listOf()
     }
 
 }

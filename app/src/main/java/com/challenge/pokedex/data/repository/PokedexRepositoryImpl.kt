@@ -2,6 +2,7 @@ package com.challenge.pokedex.data.repository
 
 import com.challenge.pokedex.data.datasource.local.PokemonLocalDataSource
 import com.challenge.pokedex.data.datasource.network.PokedexNetworkDatasource
+import com.challenge.pokedex.domain.entity.Evolution
 import com.challenge.pokedex.domain.entity.PokemonDetail
 import com.challenge.pokedex.domain.entity.PokemonResult
 import com.challenge.pokedex.domain.repository.PokedexRepository
@@ -29,10 +30,14 @@ class PokedexRepositoryImpl(
     }
 
     override suspend fun getPokemonDetail(id: String): PokemonDetail {
-        TODO("Not yet implemented")
+        return pokedexNetworkDatasource.getPokemonDetail(id)
     }
 
     override suspend fun downloadThumbnails(list: List<PokemonResult>) {
         pokemonLocalDataSource.downloadThumbnails(list)
+    }
+
+    override suspend fun getEvolutions(id: String): List<Evolution> {
+        return pokedexNetworkDatasource.getPokemonEvolutions(id)
     }
 }

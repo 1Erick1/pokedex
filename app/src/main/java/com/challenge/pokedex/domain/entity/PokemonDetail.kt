@@ -18,7 +18,6 @@ data class Type(
 
 data class Ability(
     val name: String,
-    val isHidden: Boolean,
     val url: String
 )
 

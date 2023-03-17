@@ -1,5 +1,6 @@
 package com.challenge.pokedex.domain.repository
 
+import com.challenge.pokedex.domain.entity.Evolution
 import com.challenge.pokedex.domain.entity.PokemonDetail
 import com.challenge.pokedex.domain.entity.PokemonResult
 
@@ -11,4 +12,6 @@ interface PokedexRepository {
     suspend fun getPokemonDetail(id: String): PokemonDetail
 
     suspend fun downloadThumbnails(list: List<PokemonResult>)
+
+    suspend fun getEvolutions(id: String): List<Evolution>
 }
